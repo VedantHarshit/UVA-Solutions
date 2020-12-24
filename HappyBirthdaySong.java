@@ -21,10 +21,8 @@ public class Main
 
 		for(int i = 0 ; i < n ; i++)
 		{
-			System.out.println(names[i] + ": " + song[sp]);
-			sp++;
-			if(sp == song.length)
-				sp = 0;
+			System.out.println(names[i] + ": " + song[sp++]);
+			sp %= song.length;
 		}
 
 		if(sp != 0)
@@ -32,11 +30,8 @@ public class Main
 			int index = 0;
 			while(sp < song.length)
 			{
-				System.out.println(names[index] + ": " + song[sp]);
-				index++;
-				sp++;
-				if(index == n)
-					index = 0;
+				System.out.println(names[index++] + ": " + song[sp++]);
+				index %= n;
 			}
 		}
 	} 
